@@ -1,6 +1,9 @@
 import React from 'react'
 
 const CanvasAnalysis = (props) => {
+
+
+
     // console.log(props.typedArray.data.length)
     // var data = props.typedArray.data
     // var bmpData = bitmap.pixels

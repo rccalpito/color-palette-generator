@@ -29,9 +29,9 @@ const CanvasDisplay = () => {
       // This value is the size of the picture (346x346) x 4 values per pixel
       // console.log("getImageData: ", myImageData.data.length)
     }
+    var pixelData = canvas.getContext('2d').getImageData(100, 101, 1, 1).data;
+    console.log(pixelData)
   }, [])
-
-
 
 
   return (
