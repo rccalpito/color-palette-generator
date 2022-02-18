@@ -8,7 +8,6 @@ const CanvasAnalysis = (props) => {
     // var data = props.typedArray.data
     // var bmpData = bitmap.pixels
     // var stride = bitmap.stride
-
     // const getBMP = (tArray) => {
     //     // Create a dataview to manipulate your emotions
     //     // i mean, your data.
