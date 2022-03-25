@@ -7,14 +7,17 @@ const CanvasDisplay = (props) => {
   const canvasRef = useRef(null);
   const [myImageData, setMyImageData] = useState();
   const [bwImageData, setBwImageData] = useState();
-  const [img, setImg] = useState(new Image());
+  // const [img, setImg] = useState(new Image());
+  const img = new Image();
 
   const [greyFlag, setGreyFlag] = useState(false);
   // const [ctx, setCtx] = useState();
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
-    img.src = profilePic;
+    // img.src = profilePic;
+    img.src =
+      "https://images.unsplash.com/photo-1648160070241-af1ad4860995?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80";
     img.onload = function () {
       canvasRef.current.width = this.naturalWidth;
       canvasRef.current.height = this.naturalHeight;
@@ -27,6 +30,7 @@ const CanvasDisplay = (props) => {
           canvasRef.current.height
         )
       );
+      console.log("img data:", myImageData);
       setBwImageData(
         ctx.getImageData(
           0,
@@ -36,7 +40,7 @@ const CanvasDisplay = (props) => {
         )
       );
     };
-  }, [console.log("onLoad myImageData: ", myImageData)]);
+  }, []);
 
   const greyScale = () => {
     const ctx = canvasRef.current.getContext("2d");
@@ -115,7 +119,6 @@ const CanvasDisplay = (props) => {
         )
       );
       setGreyFlag(true);
-      console.log("green: ", bwImageData);
     } else {
       ctx.putImageData(myImageData, 0, 0);
       setGreyFlag(false);
@@ -147,7 +150,7 @@ const CanvasDisplay = (props) => {
           canvasRef.current.height
         )
       );
-      console.log("blue: ", bwImageData);
+      // console.log("blue: ", bwImageData);
       setGreyFlag(true);
     } else {
       ctx.putImageData(myImageData, 0, 0);

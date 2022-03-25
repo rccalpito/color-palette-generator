@@ -4,10 +4,6 @@ import React from "react";
 
 const CanvasAnalysis = (myImageData) => {
   console.log("From CanvasAnalysis: ", myImageData);
-  //   console.log("Also from CanvasAnalysis: ", myImageData.imgData.data);
-  //   const imgArray = myImageData.imgData.data;
-
-  //   console.log("imgArray: ", imgArray);
 
   return <div>CanvasAnalysis</div>;
 };
